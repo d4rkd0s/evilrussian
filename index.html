@@ -10,78 +10,79 @@
     </head>
 <body>
     <div class="container">
-    <h1>Evil Russian Push-Up Calculator</h1>
-    <hr>
-    <h3>The Rules</h3>
-    <ol>
-        <li>14 days, number and frequency will change</li>
-        <li>No skipping times or days, anywhere, anytime, push-up!</li>
-        <li>When you do 100% test, go until you can't do anymore</li>
-        <li>If you are awake do push-ups, except 1hr before going to sleep</li>
-    </ol>
-    <hr>
-    <h3>The Calculator</h3>
-    <form>
-        Drop down, do push-ups, enter number:
-        <input type="number" value="10" id="base">
+        <br><br>
+        <h1>Evil Russian Push-Up Calculator</h1>
+        <hr>
+        <h3>The Rules</h3>
+        <ol>
+            <li>14 days, number and frequency will change</li>
+            <li>No skipping times or days, anywhere, anytime, push-up!</li>
+            <li>When you do 100% test, go until you can't do anymore</li>
+            <li>If you are awake do push-ups, except 1hr before going to sleep</li>
+        </ol>
+        <hr>
+        <h3>The Calculator</h3>
+        <form>
+            Drop down, do push-ups, enter number:
+            <input type="number" value="10" id="base">
+            <br>
+        </form>
+        <hr>
+        <h3>The Results</h3>
         <br>
-    </form>
-    <hr>
-    <h3>The Results</h3>
-    <br>
 
-    <pre>
-    Week 1 
-    Monday <span class="100">...</span> Initial push-ups, test your max
-    Tuesday <span class="50">...</span> push-ups every 60 min 
-    Wednesday <span class="60">...</span> push-ups every 45 min 
-    Thursday <span class="25">...</span> push-ups every 60 min 
-    Friday <span class="45">...</span> push-ups every 30 min 
-    Saturday <span class="40">...</span> push-ups every 60 min 
-    Sunday <span class="20">...</span> push-ups every 90 min 
+        <pre>
+        Week 1 
+        Monday <span class="100">...</span> Initial push-ups, test your max
+        Tuesday <span class="50">...</span> push-ups every 60 min 
+        Wednesday <span class="60">...</span> push-ups every 45 min 
+        Thursday <span class="25">...</span> push-ups every 60 min 
+        Friday <span class="45">...</span> push-ups every 30 min 
+        Saturday <span class="40">...</span> push-ups every 60 min 
+        Sunday <span class="20">...</span> push-ups every 90 min 
 
-    Week 2 
-    Monday <span class="100">...</span> push-ups every 45 min 
-    Tuesday <span class="55">...</span> push-ups every 20 min 
-    Wednesday <span class="30">...</span> push-ups every 15 min 
-    Thursday <span class="65">...</span> push-ups every 60 min 
-    Friday <span class="35">...</span> push-ups every 45 min 
-    Saturday <span class="45">...</span> push-ups every 60 min 
-    Sunday <span class="25">...</span> push-ups every 120 min 
+        Week 2 
+        Monday <span class="100">...</span> push-ups every 45 min 
+        Tuesday <span class="55">...</span> push-ups every 20 min 
+        Wednesday <span class="30">...</span> push-ups every 15 min 
+        Thursday <span class="65">...</span> push-ups every 60 min 
+        Friday <span class="35">...</span> push-ups every 45 min 
+        Saturday <span class="45">...</span> push-ups every 60 min 
+        Sunday <span class="25">...</span> push-ups every 120 min 
 
-    Week 3 
-    Mon: <span class="100">...</span> re-test your max
-    </pre>
-</div>
-<script src="jquery-3.3.1.min.js"></script>
-<script>
-$(document).ready(function() {
-    function update() {
-        var baseVal = $("#base").val();
-        console.log("Updating with new push-up count of: " + baseVal);
-        $(".100").text(Math.round(baseVal*1));
-        $(".65").text(Math.round(baseVal*0.65));
-        $(".60").text(Math.round(baseVal*0.60));
-        $(".55").text(Math.round(baseVal*0.55));
-        $(".50").text(Math.round(baseVal*0.50));
-        $(".45").text(Math.round(baseVal*0.45));
-        $(".40").text(Math.round(baseVal*0.40));
-        $(".35").text(Math.round(baseVal*0.35));
-        $(".30").text(Math.round(baseVal*0.30));
-        $(".25").text(Math.round(baseVal*0.25));
-        $(".20").text(Math.round(baseVal*0.20));   
-    }
-    $("#base").change(function() {
-        update();
-    });
-    $(window).keydown(function(event) {
-        if(event.keyCode == 13) {
-            event.preventDefault();
-            update();
-            return false;
-        }
-    });
-});
-</script>
+        Week 3 
+        Mon: <span class="100">...</span> re-test your max
+        </pre>
+    </div>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function update() {
+                var baseVal = $("#base").val();
+                console.log("Updating with new push-up count of: " + baseVal);
+                $(".100").text(Math.round(baseVal*1));
+                $(".65").text(Math.round(baseVal*0.65));
+                $(".60").text(Math.round(baseVal*0.60));
+                $(".55").text(Math.round(baseVal*0.55));
+                $(".50").text(Math.round(baseVal*0.50));
+                $(".45").text(Math.round(baseVal*0.45));
+                $(".40").text(Math.round(baseVal*0.40));
+                $(".35").text(Math.round(baseVal*0.35));
+                $(".30").text(Math.round(baseVal*0.30));
+                $(".25").text(Math.round(baseVal*0.25));
+                $(".20").text(Math.round(baseVal*0.20));   
+            }
+            $("#base").change(function() {
+                update();
+            });
+            $(window).keydown(function(event) {
+                if(event.keyCode == 13) {
+                    event.preventDefault();
+                    update();
+                    return false;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
