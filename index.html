@@ -1,18 +1,22 @@
 <html>
-    <head>
-        <title>Evil Russian Calculator</title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <style>
+
+<head>
+    <title>Evil Russian Calculator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
         span {
             font-weight: bold;
         }
-        </style>
-    </head>
+    </style>
+</head>
+
 <body>
-    <div class="container">
+    <div class="contain-er">
         <br><br>
         <h1>Evil Russian Push-Up Calculator</h1>
         <hr>
+        <a style="padding:12px; color: black; font-weight: bold;" href="?darkmode=true" id="darkModeButton">🌙 Switch to Dark Mode</a>
+        <br><br>
         <h3>The Rules</h3>
         <ol>
             <li>14 days, number and frequency will change</li>
@@ -24,7 +28,7 @@
         <h3>The Calculator</h3>
         <form>
             Drop down, do push-ups, enter number:
-            <input type="number" value="10" id="base">
+            <input type="number " value="10 " id="base ">
             <br>
         </form>
         <hr>
@@ -33,56 +37,85 @@
 
         <pre>
         Week 1 
-        Monday <span class="100">...</span> Initial push-ups, test your max
-        Tuesday <span class="50">...</span> push-ups every 60 min 
-        Wednesday <span class="60">...</span> push-ups every 45 min 
-        Thursday <span class="25">...</span> push-ups every 60 min 
-        Friday <span class="45">...</span> push-ups every 30 min 
-        Saturday <span class="40">...</span> push-ups every 60 min 
-        Sunday <span class="20">...</span> push-ups every 90 min 
+        Monday <span class="100 ">...</span> Initial push-ups, test your max
+        Tuesday <span class="50 ">...</span> push-ups every 60 min 
+        Wednesday <span class="60 ">...</span> push-ups every 45 min 
+        Thursday <span class="25 ">...</span> push-ups every 60 min 
+        Friday <span class="45 ">...</span> push-ups every 30 min 
+        Saturday <span class="40 ">...</span> push-ups every 60 min 
+        Sunday <span class="20 ">...</span> push-ups every 90 min 
 
         Week 2 
-        Monday <span class="100">...</span> push-ups every 45 min 
-        Tuesday <span class="55">...</span> push-ups every 20 min 
-        Wednesday <span class="30">...</span> push-ups every 15 min 
-        Thursday <span class="65">...</span> push-ups every 60 min 
-        Friday <span class="35">...</span> push-ups every 45 min 
-        Saturday <span class="45">...</span> push-ups every 60 min 
-        Sunday <span class="25">...</span> push-ups every 120 min 
+        Monday <span class="100 ">...</span> push-ups every 45 min 
+        Tuesday <span class="55 ">...</span> push-ups every 20 min 
+        Wednesday <span class="30 ">...</span> push-ups every 15 min 
+        Thursday <span class="65 ">...</span> push-ups every 60 min 
+        Friday <span class="35 ">...</span> push-ups every 45 min 
+        Saturday <span class="45 ">...</span> push-ups every 60 min 
+        Sunday <span class="25 ">...</span> push-ups every 120 min 
 
         Week 3 
-        Mon: <span class="100">...</span> re-test your max
+        Mon: <span class="100 ">...</span> re-test your max
         </pre>
     </div>
-    <script src="jquery-3.3.1.min.js"></script>
+    <script src="jquery-3.3.1.min.js "></script>
     <script>
         $(document).ready(function() {
             function update() {
-                var baseVal = $("#base").val();
+                var baseVal = $("#base ").val();
                 console.log("Updating with new push-up count of: " + baseVal);
-                $(".100").text(Math.round(baseVal*1));
-                $(".65").text(Math.round(baseVal*0.65));
-                $(".60").text(Math.round(baseVal*0.60));
-                $(".55").text(Math.round(baseVal*0.55));
-                $(".50").text(Math.round(baseVal*0.50));
-                $(".45").text(Math.round(baseVal*0.45));
-                $(".40").text(Math.round(baseVal*0.40));
-                $(".35").text(Math.round(baseVal*0.35));
-                $(".30").text(Math.round(baseVal*0.30));
-                $(".25").text(Math.round(baseVal*0.25));
-                $(".20").text(Math.round(baseVal*0.20));   
+                $(".100 ").text(Math.round(baseVal * 1));
+                $(".65 ").text(Math.round(baseVal * 0.65));
+                $(".60 ").text(Math.round(baseVal * 0.60));
+                $(".55 ").text(Math.round(baseVal * 0.55));
+                $(".50 ").text(Math.round(baseVal * 0.50));
+                $(".45 ").text(Math.round(baseVal * 0.45));
+                $(".40 ").text(Math.round(baseVal * 0.40));
+                $(".35 ").text(Math.round(baseVal * 0.35));
+                $(".30 ").text(Math.round(baseVal * 0.30));
+                $(".25 ").text(Math.round(baseVal * 0.25));
+                $(".20 ").text(Math.round(baseVal * 0.20));
             }
-            $("#base").change(function() {
+            $("#base ").change(function() {
                 update();
             });
             $(window).keydown(function(event) {
-                if(event.keyCode == 13) {
+                if (event.keyCode == 13) {
                     event.preventDefault();
                     update();
                     return false;
                 }
             });
+            // Dark Mode
+            var $_GET = [];
+            window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(a, name, value) {
+                $_GET[name] = value;
+            });
+            console.log($_GET['darkmode']);
+            if ($_GET['darkmode'] == 'true') {
+                $("body").css("background-color", "#1c1c1c");
+                $("body").css("color", "#ffffff");
+                $("h1").css("color", "#ffffff");
+                $("h3").css("color", "#ffffff");
+                $("ol").css("color", "#ffffff");
+                $("span").css("color", "#ffffff");
+                $("pre").css("color", "#ffffff");
+                $("a").css("color", "#ffffff");
+                $("a").css("background-color", "#1c1c1c");
+                $("a").css("border-color", "#1c1c1c");
+                $("a").css("border-radius", "5px");
+                $("a").css("padding", "5px");
+                $("a").css("margin", "5px");
+                $("a").css("text-decoration", "none");
+                $("a").css("text-shadow", "0 0 5px #ffffff");
+
+                // Get the dark mode button and change it to light mode
+                var darkModeButton = document.getElementById("darkModeButton");
+                darkModeButton.innerHTML = "☀️ Switch to Light Mode";
+                darkModeButton.href = "?darkmode=false";
+            }
         });
     </script>
 </body>
+
 </html>
