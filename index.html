@@ -62,21 +62,21 @@
     <script>
         $(document).ready(function() {
             function update() {
-                var baseVal = $("#base ").val();
+                var baseVal = $("#base").val();
                 console.log("Updating with new push-up count of: " + baseVal);
-                $(".100 ").text(Math.round(baseVal * 1));
-                $(".65 ").text(Math.round(baseVal * 0.65));
-                $(".60 ").text(Math.round(baseVal * 0.60));
-                $(".55 ").text(Math.round(baseVal * 0.55));
-                $(".50 ").text(Math.round(baseVal * 0.50));
-                $(".45 ").text(Math.round(baseVal * 0.45));
-                $(".40 ").text(Math.round(baseVal * 0.40));
-                $(".35 ").text(Math.round(baseVal * 0.35));
-                $(".30 ").text(Math.round(baseVal * 0.30));
-                $(".25 ").text(Math.round(baseVal * 0.25));
-                $(".20 ").text(Math.round(baseVal * 0.20));
+                $(".100").text(Math.round(baseVal * 1));
+                $(".65").text(Math.round(baseVal * 0.65));
+                $(".60").text(Math.round(baseVal * 0.60));
+                $(".55").text(Math.round(baseVal * 0.55));
+                $(".50").text(Math.round(baseVal * 0.50));
+                $(".45").text(Math.round(baseVal * 0.45));
+                $(".40").text(Math.round(baseVal * 0.40));
+                $(".35").text(Math.round(baseVal * 0.35));
+                $(".30").text(Math.round(baseVal * 0.30));
+                $(".25").text(Math.round(baseVal * 0.25));
+                $(".20").text(Math.round(baseVal * 0.20));
             }
-            $("#base ").change(function() {
+            $("#base").change(function() {
                 update();
             });
             $(window).keydown(function(event) {
